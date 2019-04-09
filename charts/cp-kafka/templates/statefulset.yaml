@@ -111,9 +111,7 @@ spec:
         - name: KAFKA_LOG_DIRS
           value: {{ include "cp-kafka.log.dirs" . | quote }}
         - name: CONFLUENT_SUPPORT_METRICS_ENABLE
-          value: false
-#        - name: CONFLUENT_METRICS_REPORTER_BOOTSTRAP_SERVERS
-#          value: {{ printf "PLAINTEXT://%s:9092" (include "cp-kafka.cp-kafka-headless.fullname" .) | quote }}
+          value: "false"
         {{- range $key, $value := .Values.configurationOverrides }}
         - name: {{ printf "KAFKA_%s" $key | replace "." "_" | upper | quote }}
           value: {{ $value | quote }}
