@@ -1,15 +1,25 @@
-# Confluent Open Source Helm Chart
+# Non-Enterprise Kafka Helm Chart
 
-**The Confluent Platform Helm charts are in developer preview and are not supported for production use.**
+Clone of the [Confluent Platform Helm charts](https://github.com/confluentinc/cp-helm-charts) with non-enterprise Kafka.
 
-The [Confluent Platform Helm charts](https://github.com/confluentinc/cp-helm-charts) enable you to deploy Confluent Platform services on Kubernetes for development, test, and proof of concept environments.
 
 ## Installing Charts
 
+### Install Helm
+
+A script to do that for your Kubernetes Cluster is available in the `scripts`-directory.
+
+After that, install this as a helm repo.
+
 ```
-helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/
+helm repo add kafka https://github.com/iamdaniu/cp-helm-charts
 helm repo update
 ```
+
+To run a minimal Zookeeper/Kafka setup (3 instances each), run `helm_start_min_kafka.sh` in the `scripts` directory.
+If you require more instances, adjust the corresponding helm charts.
+
+# README content from the original Confluent Helm Charts project
 
 ## Documentation
 
